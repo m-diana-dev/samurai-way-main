@@ -1,0 +1,17 @@
+
+.aside{
+    width: calc(30% - 20px);
+    padding: 30px 20px;
+    font-size: 20px;
+    border: 1px solid #DEDCFF;
+    border-radius: 10px;
+}
+ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.item{
+    font-size: 20px;
+}
+.item._active{
+    color: #A72DFF;
+}
