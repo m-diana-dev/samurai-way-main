@@ -73,6 +73,11 @@ h6 {
 }
 
 /*--------------------*/
+
+
+html {
+    overflow-y: scroll;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700&display=swap');
 body{
     font-family: 'Montserrat';
@@ -89,4 +94,11 @@ body{
 .section-wrapp{
     display: flex;
     justify-content: space-between;
+}
+.main_block{
+    width: calc(70% - 20px);
+}
+h1{
+    font-size: 30px;
+    margin-bottom: 30px;
 }

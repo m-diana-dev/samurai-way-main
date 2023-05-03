@@ -1,6 +1,9 @@
 
 .aside{
+    position: sticky;
+    top: 30px;
     width: calc(30% - 20px);
+    height: 100%;
     padding: 30px 20px;
     font-size: 20px;
     border: 1px solid #DEDCFF;
@@ -9,9 +12,9 @@
 ul li:not(:last-child){
     margin-bottom: 10px;
 }
-.item{
+li{
     font-size: 20px;
 }
-.item._active{
+li a.active{
     color: #A72DFF;
 }

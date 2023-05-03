@@ -1,0 +1,43 @@
+.dialogs_wrapp{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.dialogs_items{
+    position: sticky;
+    top: 30px;
+    width: calc(30% - 10px);
+    height: 100%;
+    padding: 30px 20px;
+    border: 1px solid #DEDCFF;
+    border-radius: 10px;
+}
+.dialogs_items a.active{
+    color: #A72DFF;
+}
+.message_items{
+    width: calc(70% - 10px);
+    height: 100%;
+}
+.message{
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    max-width: 80%;
+    width: fit-content;
+    white-space: normal;
+    font-size: 18px;
+    background-color: #A72DFF;
+}
+.message:not(:last-child){
+    margin-bottom: 10px;
+}
+.message.left{
+    background-color: #A72DFF;
+}
+.message.right{
+    background-color: #D0D0D2;
+    color: #000;
+    margin-left: auto;
+    margin-right: 0;
+}
