@@ -2,8 +2,13 @@ import React from "react";
 import s from './Profile.module.css'
 import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
+import {PostsType} from "../../redux/state";
 
-export const Profile = () => {
+
+type ProfilePropsType = {
+    posts: PostsType[]
+}
+export const Profile = (props: ProfilePropsType) => {
     return (
         <>
             <div className={s.banner}>
@@ -12,7 +17,7 @@ export const Profile = () => {
                     alt={s.banner}/>
             </div>
             <ProfileInfo/>
-            <MyPosts/>
+            <MyPosts posts={props.posts}/>
         </>
     )
 }

@@ -1,8 +1,13 @@
 import React from "react";
 import s from './MyPosts.module.css'
 import {Post} from "./Post/Posts";
+import {PostsType} from "../../../redux/state";
 
-export const MyPosts = () => {
+
+type MyPostsPropsType = {
+    posts: PostsType[]
+}
+export const MyPosts = (props: MyPostsPropsType) => {
     return (
         <>
             <div className={s.posts}>
@@ -11,9 +16,7 @@ export const MyPosts = () => {
                 <button>Send</button>
             </div>
             <div className={s.posts_items}>
-                <Post text={'Hello!'} likes={12}/>
-                <Post text={'Hello! Hello!'} likes={1}/>
-                <Post text={'Hello! Hello! Hello!'} likes={8}/>
+                {props.posts.map(el=><Post key={el.id} id={el.id} text={el.text} likes={el.likes}/>)}
             </div>
         </>
     )

@@ -7,8 +7,13 @@ import {BrowserRouter, Route} from "react-router-dom";
 import {News} from "./components/News/News";
 import {Music} from "./components/Music/Music";
 import {Dialogs} from "./components/Dialogs/Dialogs";
+import {StateType} from "./redux/state";
 
-const App = () => {
+
+type AppPropsType = {
+    state: StateType
+}
+const App = (props: AppPropsType) => {
     return (
         <BrowserRouter>
             <div className="app">
@@ -17,10 +22,10 @@ const App = () => {
                     <div className="container section-wrapp">
                         <Navbar/>
                         <main className="main_block">
-                            <Route path="/profile" component={Profile}/>
-                            <Route path="/messages" component={Dialogs}/>
-                            <Route path="/news" component={News}/>
-                            <Route path="/music" component={Music}/>
+                            <Route path="/profile" render={()=><Profile posts={props.state.ProfilePage.posts}/>}/>
+                            <Route path="/messages" render={()=><Dialogs dialogs={props.state.DialogsPage.dialogs} messages={props.state.DialogsPage.messages}/>}/>
+                            <Route path="/news" render={()=><News/>}/>
+                            <Route path="/music" render={()=><Music/>}/>
                         </main>
                     </div>
                 </section>
